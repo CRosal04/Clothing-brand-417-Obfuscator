@@ -1,0 +1,149 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script src="script.js" defer></script>
+<header>
+
+  <h1>La R Shop</h1>
+
+  <button class="toggle-btn" id="toggle-btn">Switch to Dark Mode</button>
+<nav>
+  <h2 class="sr-only">Main Content</h2>
+  
+  <ul>
+    <li><a href="#aBout">About</a></li>
+    <li><a href="#sHop">Shop</a></li>
+    <li><a href="#cOllections">Collections</a></li>
+    <li><a href="#Contact-us">Contact us</a></li>
+
+  </ul>
+</nav>
+</header>
+<main id = "main" >
+
+ <section id="aBout">
+    <h2>About</h2>
+    <div>
+    <img src="images/El nopal.jpeg" alt ="nopal card" class = "left-image">
+<p>La R Shop is a vibrant clothing brand that beautifully intertwines contemporary fashion with the rich heritage of Mexican culture. Inspired by the colorful traditions, intricate craftsmanship, and unique artistry found throughout Mexico, La R Shop aims to create apparel that not only stands out but also tells a story.</p>
+
+    <h3>Vision</h3>
+    <p>At La R Shop, we envision a world where everyone can showcase their individuality through their wardrobe. We draw inspiration from diverse cultures, art, and the latest fashion trends, blending them into unique pieces that are both timeless and modern. Our collections reflect a commitment to creativity, originality, and self-expression.</p>
+    </div>
+  </section>
+
+   <section id="sHop">
+    <h2>Shop</h2>
+    <h3>Quick Order</h3>
+   <div>
+    <section id="product"> 
+        <img src="images/la nopals1.jpeg" alt="nopals1">
+        <p>The nopal shirt - $20.00</p>
+        <button id="addToCart-btn" onclick="addToCart(20)">Add to Cart</button>
+    </section>
+    <section id="product"> 
+      <img src="images/blue demon.webp" alt="Blue demon shirt">
+      <p>Blue demon shirt- $20.00</p>
+      <button id="addToCart-btn" onclick="addToCart(25)">Add to Cart</button>
+  </section>
+  <section id="product"> 
+    <img src="images/el santos.jpg" alt="sweater">
+    <p>El santo sweater - $35.00</p>
+    <button id="addToCart-btn" onclick="addToCart(25)">Add to Cart</button>
+  </section>
+    <section id="product"> 
+      <img src="images/hoddie1.jpeg" alt="hoodie">
+      <p>Blue demon hoodie - $45.00</p>
+      <button id="addToCart-btn" onclick="addToCart(25)">Add to Cart</button>
+</section>
+<section id="product"> 
+  <img src="images/guayabera.webp" alt="hoodie">
+  <p>Guayabera shirt - $30.00</p>
+  <button id="addToCart-btn" onclick="addToCart(25)">Add to Cart</button>
+</section>
+<section id="product"> 
+  <img src="images/embroider shirt.webp" alt="hoodie">
+  <p>Embroider shirt - $50.00</p>
+  <button  id="addToCart-btn" onclick="addToCart(25)">Add to Cart</button>
+</section>
+</div>
+<div id="cart">
+  <h3>Your Cart</h3>
+  <div class="cart-details">
+      <p>Product Total: $<span id="productTotal">0.00</span></p>
+      <p>Tax (10%): $<span id="taxAmount">0.00</span></p>
+      <p>Shipping: $<span id="shippingAmount">10.00</span></p>
+      <p><strong>Total Price (with tax): $<span id="totalPrice">0.00</span></strong></p>
+  </div>
+  <button id="checkout-btn" onclick="checkout()">Checkout</button>
+  <div id="message"></div>
+</div>
+  
+  </section>
+    <section id="cOllections">
+    <h2>Collection</h2>
+ <!-- Product Display Area -->
+ <div id="product-display" class="product-display">
+  <img id="product-image" src="images/la nopals2.jpeg alt=Default Product">
+ <div class = text-floatr>
+  <h3 id="product-name">La nopalera shirt</h3>
+  <p id="product-description">Our Loteria-Inspired Shirt is an iconic tribute to a beloved Mexican culture.</p>
+</div>
+</div>
+
+<!-- Buttons to Select Products ( how can i float the name and the description from the showProduct) --> 
+<div class="product-buttons">
+  <button  id = product-bttns onclick="showProduct('Nopalera shirt', src = 'images/la nopals1.jpeg', 'Our Loteria-Inspired Shirt is an iconic tribute to a beloved Mexican culture. ')">Nopalera shirt</button>
+  <button  id = product-bttns onclick="showProduct('Blue demon shirt', src ='images/blue demon.webp', 'The design features a luchador (wrestler) wearing a traditional mask, a key symbol of identity and mystique in Mexican wrestling.' )">Blue demon shirt</button>
+  <button id = product-bttns onclick="showProduct('El santo sweeter', src ='images/el santos.jpg', 'The El Santo sweater design is a tribute to one of Mexico’s most beloved and legendary figures, El Santo, the Silver Masked Man. ')"> El santo sweater</button>
+</div>
+</div>
+  </section>
+    <section id="Contact-us">
+        <h2>Contact us</h2>
+        <form id="newAcct" action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="GET">
+          <div id="names">
+            <label for="name">First Name: <span class="required">*</span></label>
+            <input id="name" type="text" autocomplete="name" placeholder="Enter First name">
+            <span id="name-error" class="error-message hidden">Please enter a valid First name</span>
+
+            <label for="lname">Last Name:<span class="required">*</span></label>
+            <input id="lname" type="text" autocomplete="name" placeholder="Enter Last name">
+            <span id="lname-error" class="error-message hidden">Please enter a valid Last name</span>
+
+            <label for="email">Email <span class="required">*</span></label>
+            <input id="email" type="email" autocomplete="email" placeholder="Enter Email">
+            <span id="email-error" class="error-message hidden">Please enter a valid email</span>
+
+            <label for="phonenum">Phone<span class="required">*</span></label>
+            <input id="phonenum" type="tel" autocomplete="tel" placeholder="Enter telephone number">
+            <span id="phonenum-error" class="error-message hidden">Please enter a valid phone number</span>
+        </div>
+          <div id="nums">
+            <fieldset>
+              <legend>Preferred Contact Method<span class="required">*</span></legend>
+                <input id="Phone" type ="radio" name="Contact" value="Phone" >
+                <label for="Phone">Phone</label>
+                <input id="Email" type ="radio" name="Contact" value="Email">
+                <label for="Email">Email</label>
+                <input id="text" type ="radio" name="Contact" value="text">
+                <label for="text">Text</label>
+                
+            </fieldset>
+            <p id="contact-error" class="error-message hidden">Please select a preferred contact method</p>
+            <p id="contact" class="hidden"></p>
+                
+                <label for ="message">Your message :<span class="required">*</span></label>
+                <textarea id="message">  </textarea>
+          </div>        
+    
+        <input type="submit" name="mySubmit" id="mySubmit" value="Submit">
+                      
+        </form>
+  </section>
+
+</main>
+<footer>
+  <p><small>Copyright 2024</small></p>
+</footer>
